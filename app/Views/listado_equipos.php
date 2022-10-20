@@ -66,14 +66,15 @@
                                                 <td><?php echo $equipo["clasificacion"] ?></td>
                                                 <td><?php echo $equipo["titulos"] ?></td>
                                                 <td>
-                                                    <a href="">
+                                                <a onclick="return msj2(<?=  $equipo['id']?>)">
                                                     <button type="button" class="btn btn-success">Modificar<i class="bi bi-pencil-square" style="color:white"></i>
                                                     </button>
                                                     </a>
                                                 </td>
                                                 <td >
-                                                    <a onclick="" href="">
-                                                    <button type="button" class="btn btn-danger">Borrar<i style="color:withe" class="bi bi-x-circle"></i>
+                                                
+                                                    <a onclick="return msj(<?=  $equipo['id']?>)">
+                                                    <button type="submit" class="btn btn-danger">Borrar<i style="color:withe" class="bi bi-x-circle"></i>
                                                     </button>
                                                     </a>
                                                 </td>
@@ -101,6 +102,22 @@
             </div>
         </div>
     </div>
+
+    <script>
+    function msj(equipoId) {
+
+       location.href = "<?= base_url('/eliminar')?>/" + equipoId; 
+        
+    }
+</script>
+
+<script>
+    function msj2(equipoId) {
+
+       location.href = "<?= base_url('/modificar')?>/" + equipoId; 
+        
+    }
+</script>
 
     <!-- jquery vendor -->
     <script src="assets/js/lib/jquery.min.js"></script>

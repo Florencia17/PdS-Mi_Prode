@@ -39,7 +39,9 @@ $routes->get('/', 'Home::index');
 $routes->get('/form-alta-equipo', 'Equipo::index');
 $routes->post('/alta-equipo', 'Equipo::alta');
 $routes->get('/listado-equipos', 'Equipo::listado');
-
+$routes->get('/eliminar/(:num)', 'Equipo::eliminar/$1');
+$routes->get('/modificar/(:num)', 'Equipo::modificar/$1');
+$routes->post('/guardarModificacion', 'Equipo::guardarModificacion');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
